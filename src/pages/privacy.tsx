@@ -1,6 +1,5 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import FloatingCubes from "@/components/FloatingCubes";
 
 const DataPrivacy = () => {
   return (

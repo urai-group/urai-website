@@ -26,7 +26,7 @@ const Footer = () => {
             <div className="flex flex-col gap-2">
               <h4 className="uppercase tracking-wider text-xs text-foreground">Legal</h4>
               <Link to="/impressum" className="hover:text-primary">Impressum</Link>
-              <a href="/privacy" className="hover:text-primary">Data Privacy</a>
+              <Link to="/privacy" className="hover:text-primary">Data Privacy</Link>
             </div>
 
             {/* CONTRIBUTE */}
