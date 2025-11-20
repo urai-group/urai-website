@@ -10,7 +10,7 @@ const Footer = () => {
           </div>
           
           <p className="text-sm text-muted-foreground">
-            © 2025 URAI - Universität Regensburg AI Initiative
+            © 2025 URAI - University of Regensburg Artificial Intelligence
           </p>
           
           <p className="text-sm text-muted-foreground">
