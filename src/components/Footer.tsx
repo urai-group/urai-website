@@ -18,8 +18,8 @@ const Footer = () => {
             {/* CONNECT */}
             <div className="flex flex-col gap-2">
               <h4 className="uppercase tracking-wider text-xs text-foreground">Connect</h4>
-              <a href="https://www.linkedin.com/company/urai-group/" className="hover:text-primary">LinkedIn</a>
-              <a href="https://www.instagram.com/urai_group" className="hover:text-primary">Instagram</a>
+              <a href="https://www.linkedin.com/company/urai-group/"   target="_blank" rel="noopener noreferrer" className="hover:text-primary">LinkedIn</a>
+              <a href="https://www.instagram.com/urai_group"  className="hover:text-primary" target="_blank" rel="noopener noreferrer">Instagram</a>
             </div>
 
             {/* LEGAL */}
@@ -32,7 +32,7 @@ const Footer = () => {
             {/* CONTRIBUTE */}
             <div className="flex flex-col gap-2">
               <h4 className="uppercase tracking-wider text-xs text-foreground">Contribute</h4>
-              <a href="https://github.com/urai-group" className="hover:text-primary">GitHub</a>
+              <a href="https://github.com/urai-group" target="_blank" rel="noopener noreferrer" className="hover:text-primary">GitHub</a>
             </div>
 
           </div>
