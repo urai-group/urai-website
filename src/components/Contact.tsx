@@ -16,7 +16,7 @@ const Contact = () => {
     // Create mailto link
     const subject = "Interest in URAI";
     const body = message || "I would like to learn more about URAI and participate.";
-    const mailtoLink = `mailto:contact@urai-regensburg.de?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body + "\n\nMy email: " + email)}`;
+    const mailtoLink = `mailto:contact@urai-group.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body + "\n\nMy email: " + email)}`;
     
     window.location.href = mailtoLink;
     
@@ -74,7 +74,7 @@ const Contact = () => {
               href="mailto:contact@urai-regensburg.de" 
               className="text-primary hover:underline"
             >
-              contact@urai-regensburg.de
+              contact@urai-group.com
             </a>
           </p>
         </div>

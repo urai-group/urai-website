@@ -5,6 +5,7 @@ import Mission from "@/components/Mission";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import FloatingCubes from "@/components/FloatingCubes";
+import WhoWeAre from "@/components/we";
 
 const Index = () => {
   return (
@@ -14,6 +15,7 @@ const Index = () => {
       <Hero />
       <About />
       <Mission />
+      <WhoWeAre />
       <Contact />
       <Footer />
     </div>

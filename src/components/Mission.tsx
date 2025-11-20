@@ -11,10 +11,6 @@ const Mission = () => {
                 for a future in research or industry – with a clear practical focus on 
                 <span className="text-primary font-semibold"> AI, Machine Learning, and Data Science</span>.
               </p>
-              <p className="text-xl text-foreground font-medium">
-                If you want to go beyond lectures, work on real problems, and turn ideas into 
-                projects: Then URAI is the right place for you.
-              </p>
             </div>
           </div>
         </div>
