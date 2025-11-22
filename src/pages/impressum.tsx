@@ -6,12 +6,8 @@ import { Link } from "react-router-dom";
 const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <Navigation />
 
-      {/* FIX APPLIED: 
-        Changed 'p-8' to 'px-8 pb-8 pt-32'. 
-        'pt-32' adds extra space at the top so the Navigation doesn't cover the title.
-      */}
+      
       <section className="px-8 pb-8 pt-32 max-w-3xl mx-auto">
         <h1 className="text-3xl font-bold mb-6">Impressum</h1>
 

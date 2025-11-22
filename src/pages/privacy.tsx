@@ -4,7 +4,6 @@ import Footer from "@/components/Footer";
 const DataPrivacy = () => {
   return (
     <div className="min-h-screen bg-black text-gray-100 font-sans selection:bg-blue-500/30">
-      <Navigation />
 
       {/* LAYOUT FIX: 'pt-32' sorgt dafür, dass der Inhalt unter der fixierten Navigation beginnt */}
       <section className="px-8 pb-8 pt-32 max-w-3xl mx-auto relative z-10">
