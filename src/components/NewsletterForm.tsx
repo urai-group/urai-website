@@ -24,8 +24,9 @@ const NewsletterForm = () => {
 
       if (response.ok || response.type === 'opaque') {
         toast({
-          title: "Successfully subscribed!",
+          title: "Almost there!",
           description: "Please check your inbox to confirm your subscription.",
+          duration: 4000,
         });
         (e.target as HTMLFormElement).reset();
       } else {
