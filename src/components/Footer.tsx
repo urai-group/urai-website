@@ -1,19 +1,25 @@
 import logo from "@/assets/urai-logo.png";
 import { Link } from "react-router-dom";
+import NewsletterForm from "./NewsletterForm";
 
 const Footer = () => {
   return (
     <footer className="py-12 border-t border-border/50">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row justify-between gap-16">
+        <div className="flex flex-col lg:flex-row justify-between gap-12 lg:gap-8">
 
           {/* Logo */}
-          <div className="flex flex-col gap-4 w-full md:w-auto">
-            <img src={logo} alt="URAI" className="h-10 w-auto" />
+          <div className="flex flex-col gap-4 w-full lg:w-auto items-start">
+            <img src={logo} alt="URAI" className="h-10 w-auto object-contain" />
+          </div>
+
+          {/* Newsletter */}
+          <div className="w-full lg:w-auto">
+            <NewsletterForm />
           </div>
 
           {/* Columns */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-12 text-sm text-muted-foreground w-full md:w-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 sm:gap-12 text-sm text-muted-foreground w-full lg:w-auto">
 
             {/* CONNECT */}
             <div className="flex flex-col gap-2">
