@@ -11,6 +11,9 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
+// test if environment variables are loaded into the website
+console.log( "env variables", String(import.meta.env.TEST_ENV) );
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
