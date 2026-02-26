@@ -44,7 +44,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-border/40 mt-12 pt-6 text-sm text-muted-foreground">
+        <div className="border-t border-border/40 mt-12 pt-6 text-sm text-muted-foreground text-center">
           © 2025 URAI – University of Regensburg Artificial Intelligence
         </div>
 
