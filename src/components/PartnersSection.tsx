@@ -1,4 +1,5 @@
 import hetznerLogo from "@src/assets/sponsors/hetzner-logo.png";
+import ratisbonaCodingLogo from "@src/assets/sponsors/ratisbona-coding.png";
 
 export function PartnersSection() {
     return (
@@ -13,11 +14,16 @@ export function PartnersSection() {
                 </p>
             </div>
 
-            {/* Sponsor Logo */}
-            <div className="flex justify-center items-center pb-8">
+            {/* Sponsor Logos */}
+            <div className="flex flex-wrap justify-center items-center gap-12 sm:gap-20 pb-8 px-4">
                 <img
                     src={hetznerLogo}
                     alt="Hetzner, Official Sponsor"
+                    className="h-10 sm:h-14 opacity-50 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0 object-contain"
+                />
+                <img
+                    src={ratisbonaCodingLogo}
+                    alt="Ratisbona Coding, Official Sponsor"
                     className="h-10 sm:h-14 opacity-50 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0 object-contain"
                 />
             </div>
