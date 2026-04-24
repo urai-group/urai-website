@@ -93,6 +93,10 @@ export default {
           "0%": { transform: "translateX(0%)" },
           "100%": { transform: "translateX(-50%)" },
         },
+        "glow-pulse": {
+          "0%, 100%": { textShadow: "0 0 8px hsl(262 83% 48% / 0.3), 0 0 25px hsl(262 83% 48% / 0.15)" },
+          "50%": { textShadow: "0 0 12px hsl(262 83% 48% / 0.5), 0 0 40px hsl(270 80% 55% / 0.25), 0 0 60px hsl(262 83% 48% / 0.1)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -100,6 +104,7 @@ export default {
         "fade-up": "fade-up 0.7s ease-out forwards",
         "fade-in": "fade-in 0.5s ease-out forwards",
         marquee: "marquee 30s linear infinite",
+        "glow-pulse": "glow-pulse 4s ease-in-out infinite",
       },
     },
   },
