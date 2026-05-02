@@ -30,40 +30,54 @@ export function MissionSection() {
                         </div>
                     </div>
 
-                    {/* Right: Prominent Masonry Image Gallery */}
-                    <div className="grid grid-cols-2 gap-4 h-[500px] sm:h-[600px] mt-12 lg:mt-0">
-                        <div className="space-y-4">
-                            <div className="rounded-3xl overflow-hidden h-2/3 shadow-sm hover:shadow-md transition-shadow group">
+                    {/* Right: Masonry Image Gallery – real aspect ratios */}
+                    {/* one=4:3, two=3:2, three=3:4(portrait), four=3:2 */}
+                    <div className="flex gap-4 mt-12 lg:mt-0 items-start">
+
+                        {/* Left column: image one (landscape 4:3) + image three (portrait 3:4) */}
+                        <div className="flex flex-col gap-4" style={{ flex: "0 0 55%" }}>
+                            {/* Image 1 – 4:3 landscape, full outdoor group */}
+                            <div className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-1 group"
+                                style={{ aspectRatio: "4/3" }}>
                                 <img
                                     src={one}
                                     alt="Community"
-                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                                 />
                             </div>
-                            <div className="rounded-3xl overflow-hidden h-1/3 shadow-sm hover:shadow-md transition-shadow group">
+                            {/* Image 3 – cropped to 4:3, shows people + building */}
+                            <div className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-1 group"
+                                style={{ aspectRatio: "4/3" }}>
+                                <img
+                                    src={three}
+                                    alt="Event building"
+                                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                                />
+                            </div>
+                        </div>
+
+                        {/* Right column: image two + image four – same size, offset down */}
+                        <div className="flex flex-col gap-4 mt-12" style={{ flex: "0 0 42%" }}>
+                            {/* Image 2 – group indoors */}
+                            <div className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-1 group"
+                                style={{ aspectRatio: "4/3" }}>
                                 <img
                                     src={two}
                                     alt="Partners"
-                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
                                 />
                             </div>
-                        </div>
-                        <div className="space-y-4 pt-12">
-                            <div className="rounded-3xl overflow-hidden h-1/3 shadow-sm hover:shadow-md transition-shadow group">
-                                <img
-                                    src={three}
-                                    alt="Event"
-                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                                />
-                            </div>
-                            <div className="rounded-3xl overflow-hidden h-2/3 shadow-sm hover:shadow-md transition-shadow group">
+                            {/* Image 4 – event crowd */}
+                            <div className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-1 group"
+                                style={{ aspectRatio: "4/3" }}>
                                 <img
                                     src={four}
-                                    alt="Community working"
-                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                    alt="Community event"
+                                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                                 />
                             </div>
                         </div>
+
                     </div>
 
                 </div>
