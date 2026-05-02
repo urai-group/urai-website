@@ -1,16 +1,45 @@
+import { useState, useEffect, useRef } from "react";
 import one from "@src/assets/slideshow/one.jpeg";
 import two from "@src/assets/slideshow/two.jpeg";
 import three from "@src/assets/slideshow/three.jpeg";
 import four from "@src/assets/slideshow/four.jpeg";
 
+const images = [
+    { src: one, caption: "URAI goes Campus Run 2026" },
+    { src: two, caption: "URAI at AI DAY 2026" },
+    { src: three, caption: "URAI goes Datafest 2026 (Mannheim)" },
+    { src: four, caption: "URAI presents Scope Weaver" },
+];
 
 export function MissionSection() {
+    const [current, setCurrent] = useState(0);
+    const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+    const startTimer = () => {
+        if (timerRef.current) clearInterval(timerRef.current);
+        timerRef.current = setInterval(() => {
+            setCurrent(i => (i + 1) % images.length);
+        }, 4000);
+    };
+
+    useEffect(() => {
+        startTimer();
+        return () => {
+            if (timerRef.current) clearInterval(timerRef.current);
+        };
+    }, []);
+
+    const goTo = (index: number) => {
+        setCurrent(index);
+        startTimer();
+    };
+
     return (
         <section className="py-32 bg-background overflow-hidden relative">
             <div className="container max-w-7xl mx-auto px-6">
                 <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
 
-                    {/* Left: Text Content instead of Tiles */}
+                    {/* Left: Text Content */}
                     <div className="flex flex-col">
                         <p className="text-sm font-bold text-primary tracking-widest uppercase mb-4">
                             About Us
@@ -30,60 +59,62 @@ export function MissionSection() {
                         </div>
                     </div>
 
-                    {/* Right: Masonry Image Gallery – real aspect ratios */}
-                    {/* one=4:3, two=3:2, three=3:4(portrait), four=3:2 */}
-                    <div className="flex gap-4 mt-12 lg:mt-0 items-start">
+                    {/* Right: Slideshow */}
+                    <div className="flex flex-col gap-4 mt-12 lg:mt-0">
 
-                        {/* Left column: image one (landscape 4:3) + image three (portrait 3:4) */}
-                        <div className="flex flex-col gap-4" style={{ flex: "0 0 55%" }}>
-                            {/* Image 1 – 4:3 landscape, full outdoor group */}
-                            <div className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-1 group"
-                                style={{ aspectRatio: "4/3" }}>
+                        {/* Main image */}
+                        <div
+                            className="relative rounded-2xl overflow-hidden shadow-lg"
+                            style={{ aspectRatio: "4/3" }}
+                        >
+                            {images.map((img, i) => (
                                 <img
-                                    src={one}
-                                    alt="Community"
-                                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                                    key={i}
+                                    src={img.src}
+                                    alt={`Community ${i + 1}`}
+                                    className="absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-700"
+                                    style={{ opacity: i === current ? 1 : 0 }}
                                 />
-                            </div>
-                            {/* Image 3 – cropped to 4:3, shows people + building */}
-                            <div className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-1 group"
-                                style={{ aspectRatio: "4/3" }}>
-                                <img
-                                    src={three}
-                                    alt="Event building"
-                                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
-                                />
+                            ))}
+
+                            {/* Caption overlay */}
+                            <div
+                                className="absolute inset-x-0 bottom-0 transition-opacity duration-700"
+                                style={{ opacity: images[current].caption ? 1 : 0 }}
+                            >
+                                <div className="bg-gradient-to-t from-black/70 to-transparent px-5 pb-4 pt-10">
+                                    <p className="text-white text-sm font-medium leading-snug">
+                                        {images[current].caption}
+                                    </p>
+                                </div>
                             </div>
                         </div>
 
-                        {/* Right column: image two + image four – same size, offset down */}
-                        <div className="flex flex-col gap-4 mt-12" style={{ flex: "0 0 42%" }}>
-                            {/* Image 2 – group indoors */}
-                            <div className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-1 group"
-                                style={{ aspectRatio: "4/3" }}>
-                                <img
-                                    src={two}
-                                    alt="Partners"
-                                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
-                                />
-                            </div>
-                            {/* Image 4 – event crowd */}
-                            <div className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-1 group"
-                                style={{ aspectRatio: "4/3" }}>
-                                <img
-                                    src={four}
-                                    alt="Community event"
-                                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
-                                />
-                            </div>
+                        {/* Thumbnail strip */}
+                        <div className="flex gap-2">
+                            {images.map((img, i) => (
+                                <button
+                                    key={i}
+                                    onClick={() => goTo(i)}
+                                    className={`flex-1 rounded-lg overflow-hidden transition-all duration-300 ${i === current
+                                        ? "ring-2 ring-primary opacity-100"
+                                        : "opacity-50 hover:opacity-75"
+                                        }`}
+                                    style={{ aspectRatio: "4/3" }}
+                                >
+                                    <img
+                                        src={img.src}
+                                        alt={`Thumbnail ${i + 1}`}
+                                        className="w-full h-full object-cover object-center"
+                                    />
+                                </button>
+                            ))}
                         </div>
 
                     </div>
 
                 </div>
             </div>
-
-
         </section>
     );
 }

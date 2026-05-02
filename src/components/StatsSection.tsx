@@ -80,11 +80,11 @@ export function StatsSection() {
                     </div>
 
                     {/* Right: Group Photo */}
-                    <div className="relative w-full aspect-square sm:aspect-[4/3] lg:aspect-square rounded-3xl sm:rounded-[2.5rem] overflow-hidden shadow-xl bg-muted">
+                    <div className="relative w-full aspect-[4/3] rounded-3xl sm:rounded-[2.5rem] overflow-hidden shadow-xl bg-muted">
                         <img
                             src={communityBg}
                             alt="Our Community"
-                            className="w-full h-full object-cover hover:scale-105 transition-transform duration-1000"
+                            className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-1000"
                             loading="lazy"
                         />
                     </div>
