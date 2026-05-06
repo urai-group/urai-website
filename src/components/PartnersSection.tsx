@@ -1,5 +1,7 @@
-import hetznerLogo from "@src/assets/sponsors/hetzner-logo.png";
-import ratisbonaCodingLogo from "@src/assets/sponsors/ratisbona-coding.png";
+import hetznerLogo from "@src/assets/sponsors/hetzner-logo.svg";
+import ratisbonaCodingLogo from "@src/assets/sponsors/ratisbona-coding.svg";
+import tikiLogo from "@src/assets/sponsors/tiki-logo.svg";
+import techbaseLogo from "@src/assets/sponsors/techbase-logo.png";
 
 export function PartnersSection() {
     return (
@@ -19,12 +21,22 @@ export function PartnersSection() {
                 <img
                     src={hetznerLogo}
                     alt="Hetzner, Official Sponsor"
-                    className="h-10 sm:h-14 opacity-50 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0 object-contain"
+                    className="h-10 sm:h-14 max-w-[180px] opacity-50 hover:opacity-100 transition-all duration-300 grayscale hover:grayscale-0 object-contain"
                 />
                 <img
                     src={ratisbonaCodingLogo}
                     alt="Ratisbona Coding, Official Sponsor"
-                    className="h-10 sm:h-14 opacity-50 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0 object-contain"
+                    className="h-10 sm:h-14 max-w-[180px] opacity-50 hover:opacity-100 transition-all duration-300 grayscale hover:grayscale-0 object-contain"
+                />
+                <img
+                    src={tikiLogo}
+                    alt="TIKI, Technologisches Institut für angewandte Künstliche Intelligenz"
+                    className="h-10 sm:h-14 max-w-[180px] opacity-50 hover:opacity-100 transition-all duration-300 grayscale hover:grayscale-0 object-contain"
+                />
+                <img
+                    src={techbaseLogo}
+                    alt="TechBase Regensburg"
+                    className="h-10 sm:h-14 max-w-[180px] opacity-50 hover:opacity-100 transition-all duration-300 grayscale hover:grayscale-0 object-contain"
                 />
             </div>
         </section>
