@@ -23,12 +23,12 @@ const faqItems = [
     {
         num: "04",
         title: "When is the next recruitment phase?",
-        content: "We actively recruit at the beginning of each semester. However, you can apply anytime. If applications are currently closed, we will keep your details and notify you as soon as the next phase starts."
+        content: "We typically recruit at the beginning of each semester. General applications are currently paused, but if you bring a unique skill set or background, feel free to reach out to us directly at contact@urai-group.com and we'll evaluate your case individually."
     },
 ];
 
 const MemberPage = () => {
-    const applicationClosed = false;
+    const applicationClosed = true;
 
     return (
         <div className="min-h-screen bg-background text-foreground flex flex-col">
@@ -41,12 +41,19 @@ const MemberPage = () => {
                     <div className="grid md:grid-cols-2 gap-16 lg:gap-24 items-center mb-32">
                         <div className="flex flex-col items-start gap-8">
                             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight">
-                                Join us
+                                {applicationClosed ? "Applications paused" : "Join us"}
                             </h1>
                             {applicationClosed ? (
-                                <Button size="lg" variant="secondary" disabled className="w-full sm:w-auto text-lg px-8 py-6">
-                                    Application closed
-                                </Button>
+                                <div className="flex flex-col gap-4">
+                                    <p className="text-muted-foreground text-lg leading-relaxed max-w-md">
+                                        We are not accepting general applications this semester. Think you'd be an exceptional fit? We'd still love to hear from you.
+                                    </p>
+                                    <Button size="lg" variant="outline" className="w-full sm:w-auto text-lg px-8 py-6" asChild>
+                                        <a href="mailto:contact@urai-group.com?subject=Membership%20Inquiry">
+                                            Get in Touch
+                                        </a>
+                                    </Button>
+                                </div>
                             ) : (
                                 <Button size="lg" className="w-full sm:w-auto text-lg px-8 py-6" onClick={() => window.open("https://forms.urai-group.org/s/cmn7bkkqk0004pg011gilqs28", "_blank", "noopener,noreferrer")}>
                                     Apply Now
