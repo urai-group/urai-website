@@ -102,6 +102,11 @@
         @apply border-border;
     }
 
+    ::selection {
+        background: hsl(262 83% 48% / 0.3);
+        color: hsl(262 83% 25%);
+    }
+
     body {
         @apply bg-background text-foreground font-body antialiased;
     }
